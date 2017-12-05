@@ -12,8 +12,8 @@ $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
 $mail->Username = 'shrikant7295@gmail.com';                 // SMTP username
 $mail->Password = '7520020011';                           // SMTP password
-$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465;                                    // TCP port to connect to
+$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+$mail->Port = 587;                                    // TCP port to connect to
 $to=$_SESSION['email'];
 $mail->setFrom('shrikant7295@gmail.com', 'Mailer');
 $mail->addAddress($to);     // Add a recipient
@@ -32,7 +32,7 @@ Your account has been created, Now you can login .
  
 Please click this link to activate your account:----------------------<br><br><br><br>
 
-http://localhost/facebook_login_with_php/verify.php?email=$email&activation_code=$activation_code "; // Our message above including the link
+http://localhost/techersol/verify.php?email=$email&activation_code=$activation_code "; // Our message above including the link
 
 $mail->send();
 

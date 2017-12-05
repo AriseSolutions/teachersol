@@ -1,6 +1,10 @@
 <?php
 if(!session_id()){
     session_start();
+    if(!$_SESSION['fbdata']['Role']=='Teacher')
+    {
+        header('location:invalid.php');
+    }
 }
 
 // Include FB config file && User class
@@ -58,6 +62,9 @@ $logoutURL = $helper->getLogoutUrl($accessToken, $redirectURL.'logout.php');
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">My Student</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">History</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact Us</a>

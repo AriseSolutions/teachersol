@@ -1,6 +1,10 @@
 <?php
 if(!session_id()){
     session_start();
+    if(!$_SESSION['fbdata']['Role']=='Teacher')
+    {
+        header('location:invalid.php');
+    }
 }
 
 // Include FB config file && User class

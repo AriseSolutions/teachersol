@@ -9,7 +9,6 @@ require_once 'User.php';
 require_once 'config.php';
 
 
-
 if(isset($accessToken)){
     if(isset($_SESSION['facebook_access_token'])){
         $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
@@ -96,7 +95,7 @@ if(isset($accessToken)){
                 }
                 if($row['Active'] == 1 && $row['Role'] == 'Student')
                 {
-                    header('location:student.php');
+                    header('location:Student/student.php');
                 }
             }
             
